@@ -23,4 +23,16 @@ public class SpringController {
         logger.info("GET request received at /hello/uc2");
         return "Hello from BridgeLabz with Logging";
     }
+
+    //UC3
+    private final EmployeeBean employee;
+
+    public SpringController(EmployeeBean employee) {
+        this.employee = employee;
+    }
+
+    @GetMapping("/details")
+    public String getEmployeeDetails() {
+        return employee.getEmployeeDetails();
+    }
 }
